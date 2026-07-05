@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebQuest - Turismo Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+      color: #222;
+      line-height: 1.7
+    }
+
+    header {
+      background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, .4)
+    }
+
+    header p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.1rem
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .1);
+      position: sticky;
+      top: 0;
+      z-index: 100
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 120px;
+      padding: 15px;
+      border: none;
+      background: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: .3s
+    }
+
+    .tab-btn:hover {
+      background: #dff4ff
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white
+    }
+
+    .content {
+      display: none;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+      animation: fade .5s
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(15px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .content.active {
+      display: block
+    }
+
+    .card,
+    .quiz-box {
+      background: rgba(255, 255, 255, .95);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+      margin-bottom: 25px
+    }
+
+    h2 {
+      color: #0077b6;
+      margin-bottom: 15px
+    }
+
+    button {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      cursor: pointer
+    }
+
+    footer {
+      background: #023047;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>WebQuest: Páginas Web, Redes Sociales y Blogs en el Turismo</h1>
+    <p>Estrategias digitales aplicadas al turismo para estudiantes de licenciatura</p>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab(event,'introduccion')">Introducción</button>
+    <button class="tab-btn" onclick="openTab(event,'tecnologias 4.0')">tecnologias 4.0</button>
+    <button class="tab-btn" onclick="openTab(event,'objetivos')">Objetivos</button>
+    <button class="tab-btn" onclick="openTab(event,'tarea')">Tarea</button>
+    <button class="tab-btn" onclick="openTab(event,'proceso')">Proceso</button>
+    <button class="tab-btn" onclick="openTab(event,'recursos')">Recursos</button>
+    <button class="tab-btn" onclick="openTab(event,'evaluacion')">Evaluación</button>
+    <button class="tab-btn" onclick="openTab(event,'conclusion')">Conclusión</button>
+    <button class="tab-btn" onclick="openTab(event,'quiz')">Quiz</button>
+  </div>
+  <section id="introduccion" class="content active">
+    <div class="card">
+      <h2>Introducción</h2>
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80"
+        style="width:100%;border-radius:14px;margin-bottom:20px;">
+      <p>Hoy en día muchas personas deciden a qué lugar viajar después de ver información en internet. Una página web
+        bien diseñada, publicaciones llamativas en redes sociales o un blog turístico interesante pueden influir
+        directamente en la elección de un destino.
+        Sin embargo, muchos pequeños negocios turísticos todavía tienen dificultades para promocionarse digitalmente.
+        Algunos hoteles, restaurantes o agencias de viajes no saben cómo aprovechar las herramientas digitales para
+        atraer visitantes.En esta WebQuest trabajarás en equipo para analizar cómo funcionan las páginas web, las redes
+        sociales y los blogs dentro del turismo. Después elaborarás una propuesta digital sencilla para promocionar</p>
+    </div>
+  </section>
+  <section id="tecnologias 4.0" class="content">
+    <div class="card">
+      <h2>Tecnologías 4.0 aplicadas al Turismo</h2>
+      <img src="IMAGEN_TECNOLOGIAS_4_0.jpg" alt="Tecnologías 4.0 en el turismo"
+        style="width:100%; border-radius:15px; margin-bottom:20px;">
+      <p>Las Tecnologías 4.0 forman parte de la Cuarta Revolución Industrial y representan la integración de
+        herramientas digitales avanzadas como la inteligencia artificial, el Big Data, la realidad virtual, el Internet
+        de las Cosas (IoT), los sistemas inteligentes y las plataformas digitales. Estas tecnologías permiten
+        automatizar procesos, analizar grandes cantidades de información y mejorar la experiencia de los usuarios
+        mediante servicios más rápidos, personalizados y eficientes.</p>
+      <br>
+      <p>En el turismo, estas herramientas ayudan a promocionar destinos, gestionar hoteles y agencias de viajes,
+        facilitar reservas, mejorar la atención al cliente y optimizar la toma de decisiones mediante el análisis de
+        datos.</p>
+      <br>
+      <h2>Tecnologías utilizadas en el turismo</h2>
+      <br>
+      <h3>1. Skyscanner</h3>
+      <li><strong>¿Qué es?</strong> Es un metabuscador de viajes que compara vuelos, hoteles y alquiler de automóviles
+        para encontrar las mejores ofertas.</li>
+      <br>
+      <li><strong>Características:</strong></li>
+      <li>Comparación de vuelos.</li>
+      <li>Comparación de hoteles.</li>
+      <li>Comparación de renta de automóviles.</li>
+      <li>Filtros personalizados.</li>
+      <br>
+      <li><strong>Área de aplicación:</strong> Agencias de viajes y turistas independientes.</li>
+      <br>
+      <li><strong>Ventajas:</strong></li>
+      <li>Ahorra tiempo.</li>
+      <li>Encuentra mejores precios.</li>
+      <li>Facilita la planificación.</li>
+      <br>
+      <li><strong>Desventajas:</strong></li>
+      <li>Los precios pueden cambiar.</li>
+      <li>Algunos intermediarios ofrecen poco soporte.</li>
+      <br>
+      <h3>2. Waze</h3>
+      <li><strong>¿Qué es?</strong> Aplicación GPS colaborativa que proporciona información del tráfico en tiempo real.
+      </li>
+      <br>
+      <li><strong>Características:</strong></li>
+      <li>Navegación GPS.</li>
+      <li>Reportes de tráfico.</li>
+      <li>Rutas alternativas.</li>
+      <li>Información en tiempo real.</li>
+      </ul>
+      </li>
+      <br>
+      <li><strong>Área:</strong> Transporte turístico.</li>
+      <br>
+      <li><strong>Ventajas:</strong></li>
+      <li>Reduce tiempos de traslado.</li>
+      <li>Evita congestionamientos.</li>
+      <li>Información actualizada.</li>
+      <br>
+      <li><strong>Desventajas:</strong></li>
+      <li>Consume datos móviles.</li>
+      <li>Depende de internet.</li>
+      <br>
+      <h3>3. Google Translate</h3>
+      <li><strong>¿Qué es?</strong> Herramienta de traducción automática basada en Inteligencia Artificial.</li>
+      <br>
+      <li><strong>Características:</strong></li>
+      <li>Traducción de texto.</li>
+      <li>Traducción de voz.</li>
+      <li>Traducción mediante imágenes.</li>
+      <li>Más de 100 idiomas.</li>
+      <br>
+      <li><strong>Área:</strong> Atención al cliente.</li>
+      <br>
+      <li><strong>Ventajas:</strong></li>
+      <li>Facilita la comunicación.</li>
+      <li>Es gratuito.</li>
+      <li>Muy fácil de utilizar.</li>
+      <br>
+      <li><strong>Desventajas:</strong></li>
+      <li>Puede traducir incorrectamente algunos contextos.</li>
+      <li>No siempre interpreta expresiones culturales.</li>
+      <br>
+      <h3>4. Sabre</h3>
+      <li><strong>¿Qué es?</strong> Sistema Global de Distribución (GDS) utilizado para gestionar reservas turísticas.
+      </li>
+      <br>
+      <li><strong>Características:</strong></li>
+      <li>Reservas en tiempo real.</li>
+      <li>Tarifas actualizadas.</li>
+      <li>Conecta aerolíneas, hoteles y agencias.</li>
+      <br>
+      <li><strong>Área:</strong> Agencias de viajes y aerolíneas.</li>
+      <br>
+      <li><strong>Ventajas:</strong></li>
+      <li>Optimiza reservas.</li>
+      <li>Gran disponibilidad.</li>
+      <li>Información actualizada.</li>
+      <br>
+      <li><strong>Desventajas:</strong></li>
+      <li>Costos elevados.</li>
+      <li>Requiere capacitación.</li>
+      <br>
+      <h3>5. Oracle Hospitality</h3>
+      <li><strong>¿Qué es?</strong> Plataforma para la administración de hoteles.</li>
+      <br>
+      <li><strong>Características:</strong></li>
+      <li>Gestión de habitaciones.</li>
+      <li>Reservas.</li>
+      <li>Check-in digital.</li>
+      <li>Reportes.</li>
+      <br>
+      <li><strong>Área:</strong> Hoteles y resorts.</li>
+      <br>
+      <li><strong>Ventajas:</strong></li>
+      <li>Mejor organización.</li>
+      <li>Automatización.</li>
+      <li>Mayor satisfacción del huésped.</li>
+      <br>
+      <li><strong>Desventajas:</strong></li>
+      <li>Puede resultar costoso.</li>
+      <li>Depende de internet.</li>
+      <br>
+    </div>
+  </section>
+  <section id="objetivos" class="content">
+    <div class="card">
+      <h2>Objetivos de aprendizaje</h2>
+      <ul>
+        <li>Identificar funciones de páginas web, blogs y redes sociales.</li>
+        <br>
+        <li>Analizar herramientas digitales en turismo.</li>
+        <br>
+        <li>Diseñar propuesta digital turística.</li>
+        <br>
+        <li>Trabajar colaborativamente utilizando herramientas web 2.0 e inteligencia artificial generativa.</li>
+        <br>
+        <li>Aplicar criterios básicos de diseño visual y citación APA.</li>
+        <br>
+    </div>
+  </section>
+
+  <section id="tarea" class="content">
+    <div class="card">
+      <h2>Tarea</h2>
+      <h3>En equipos de tres integrantes desarrollarán una propuesta digital.</h3>
+      <h> PRODUCTO FINAL</h>
+      <li>presentacion digital breve</li>
+      <br>
+      <li>Un diseño sencillo de página web o blog turístico.</li>
+      <br>
+      <li>Tres publicaciones simuladas para redes sociales.</li>
+      <br>
+      <h>ROLES COLABORATIVOS</h>
+      <br>
+      <li>Investigador: busca información confiable sobre el destino turístico.</li>
+      <br>
+      <li>Diseñador: organiza la estructura visual y presentación.</li>
+      <br>
+      <li>Redactor: redacta textos claros y atractivos.</li>
+      <br>
+      <h>Criterios de éxito</h>
+      <br>
+      <li>Información clara y relacionada con el turismo.</li>
+      <br>
+      <li>Diseño ordenado y visualmente atractivo.</li>
+      <br>
+      <li>Uso adecuado de herramientas digitales.</li>
+      <br>
+      <li>Participación colaborativa equilibrada.</li>
+      <br>
+      <li>Fuentes citadas correctamente en APA.</li>
+    </div>
+  </section>
+
+  <section id="proceso" class="content">
+    <div class="card">
+      <h2>Proceso</h2>
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80"
+        style="width:100%;border-radius:14px;margin-bottom:20px;">
+      <ol>
+        <li>Formen equipos.</li>
+        <br>
+        <li>Investiguen herramientas digitales.</li>
+        <br>
+        <li>Diseñen propuesta.</li>
+        <br>
+        <li>Utilicen herramientas como Canva, Blogger o Google Sites para crear su propuesta.</li>
+        <br>
+        <li>Utilicen inteligencia artificial generativa únicamente como apoyo para redactar ideas o mejorar textos.</li>
+        <br>
+        <li>Diseñen tres publicaciones para redes sociales relacionadas con el destino elegido.</li>
+        <br>
+        <li>Organicen toda la información en una presentación digital sencilla.</li>
+        <br>
+        <li>Expongan el trabajo frente al grupo y expliquen cómo las plataformas digitales benefician al turismo.</li>
+      </ol>
+    </div>
+  </section>
+  <section id="recursos" class="content">
+    <div class="card">
+      <h2>Recursos</h2>
+
+      <div class="resource">
+        <p>Organización Mundial del Turismo (2023)</p>
+        <a href="https://www.unwto.org/es" target="_blank">
+          https://www.unwto.org/es
+        </a>
+      </div>
+
+      <div class="resource">
+        <p>Secretaría de Turismo de México (2024)</p>
+        <a href="https://www.gob.mx/sectur" target="_blank">
+          https://www.gob.mx/sectur
+        </a>
+      </div>
+
+      <div class="resource">
+        <p>Google Actívate (2022)</p>
+        <a href="https://learndigital.withgoogle.com/activate" target="_blank">
+          https://learndigital.withgoogle.com/activate
+        </a>
+      </div>
+
+      <div class="resource">
+        <p>HubSpot Español (2023)</p>
+        <a href="https://blog.hubspot.es/marketing" target="_blank">
+          https://blog.hubspot.es/marketing
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="evaluacion" class="content">
+    <div class="card">
+      <h2>Rúbrica de evaluación</h2>
+
+      <table>
+        <tr>
+          <th>Criterio</th>
+          <th>Excelente</th>
+          <th>Bueno</th>
+          <th>Suficiente</th>
+          <th>Insuficiente</th>
+        </tr>
+
+        <tr>
+          <td>Contextualización del problema</td>
+          <td>Explica claramente el problema y propone soluciones reales.</td>
+          <td>Describe adecuadamente la problemática.</td>
+          <td>La explicación es limitada.</td>
+          <td>No contextualiza el problema.</td>
+        </tr>
+
+        <tr>
+          <td>Precisión histórica</td>
+          <td>Información correcta y fundamentada.</td>
+          <td>Pocos errores.</td>
+          <td>Información incompleta.</td>
+          <td>Errores importantes.</td>
+        </tr>
+
+        <tr>
+          <td>Colaboración</td>
+          <td>Todo el equipo participó activamente.</td>
+          <td>La mayoría colaboró.</td>
+          <td>Participación limitada.</td>
+          <td>No hubo colaboración.</td>
+        </tr>
+
+        <tr>
+          <td>Diseño visual</td>
+          <td>Diseño atractivo y profesional.</td>
+          <td>Diseño funcional.</td>
+          <td>Diseño básico.</td>
+          <td>Diseño desorganizado.</td>
+        </tr>
+
+        <tr>
+          <td>Citación APA</td>
+          <td>Todas las fuentes están bien citadas.</td>
+          <td>Pocos errores.</td>
+          <td>Faltan referencias.</td>
+          <td>No incluye citas.</td>
+        </tr>
+      </table>
+
+    </div>
+  </section>
+
+  <section id="conclusion" class="content">
+    <div class="card">
+      <h2>Conclusión</h2>
+
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+        style="width:100%;border-radius:14px;margin-bottom:20px;">
+
+      <p>
+        Las herramientas digitales han cambiado la manera en que las personas descubren destinos turísticos y organizan
+        sus viajes. Las páginas web, redes sociales y blogs permiten compartir experiencias, promover lugares y atraer
+        visitantes de diferentes partes del mundo
+      </p>
+
+      <br>
+
+      <p>Después de realizar esta actividad, reflexiona con tu equipo sobre cómo las plataformas digitales pueden
+        utilizarse de manera responsable para fortalecer el turismo local y generar experiencias más auténticas para los
+        viajeros.
+      </p>
+
+    </div>
+  </section>
+
+  <section id="quiz" class="content">
+
+    <div class="quiz-box">
+      <h2>Quiz interactivo</h2>
+
+      <h3>Selección múltiple</h3>
+
+      <p>1. ¿Cuál es una función principal de las redes sociales en el turismo?</p>
+      <input type="radio" name="q1" value="a"> Promocionar destinos turísticos<br>
+      <input type="radio" name="q1" value="b"> Evitar comunicación<br>
+      <input type="radio" name="q1" value="c"> Eliminar publicidad<br>
+
+      <br>
+
+      <p>2. ¿Qué herramienta puede utilizarse para crear un blog?</p>
+      <input type="radio" name="q2" value="a"> Blogger<br>
+      <input type="radio" name="q2" value="b"> Calculadora<br>
+      <input type="radio" name="q2" value="c"> Paint<br>
+
+      <br>
+
+      <p>3. ¿Qué elemento ayuda a atraer turistas en internet?</p>
+      <input type="radio" name="q3" value="a"> Publicaciones visuales<br>
+      <input type="radio" name="q3" value="b"> Información desordenada<br>
+      <input type="radio" name="q3" value="c"> Sitios vacíos<br>
+
+      <button onclick="checkQuiz()">Revisar respuestas</button>
+      <div id="quizResult"></div>
+    </div>
+
+    <div class="quiz-box">
+      <h3>Verdadero o falso</h3>
+
+      <p>1. Las páginas web ayudan a promocionar destinos turísticos.</p>
+      <select id="vf1">
+        <option value="">Selecciona</option>
+        <option value="verdadero">Verdadero</option>
+        <option value="falso">Falso</option>
+      </select>
+
+      <br><br>
+
+      <p>2. Los blogs no sirven para compartir experiencias turísticas.</p>
+      <select id="vf2">
+        <option value="">Selecciona</option>
+        <option value="verdadero">Verdadero</option>
+        <option value="falso">Falso</option>
+      </select>
+
+      <br>
+      <button onclick="checkVF()">Revisar</button>
+      <div id="vfResult"></div>
+    </div>
+    <div class="quiz-box">
+      <h3>Arrastrar y soltar</h3>
+
+      <p>Relaciona cada herramienta con su función.</p>
+
+      <div class="drag-container">
+        <div class="draggable" draggable="true" id="drag1">Blog</div>
+        <div class="draggable" draggable="true" id="drag2">Red social</div>
+      </div>
+
+      <br>
+
+      <div class="drag-container">
+        <div class="dropzone" data-answer="Blog">
+          Compartir experiencias y artículos
+        </div>
+
+        <div class="dropzone" data-answer="Red social">
+          Publicaciones rápidas e interacción
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-box">
+      <h3>Relacionar columnas</h3>
+
+      <div class="matching">
+        <div>
+          <p>Página web</p>
+          <p>Canva</p>
+        </div>
+
+        <div>
+          <select id="m1">
+            <option value="">Selecciona</option>
+            <option value="promocion">Promoción turística</option>
+            <option value="diseño">Diseño visual</option>
+          </select>
+
+          <select id="m2">
+            <option value="">Selecciona</option>
+            <option value="promocion">Promoción turística</option>
+            <option value="diseño">Diseño visual</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="checkMatching()">Revisar</button>
+      <div id="matchingResult"></div>
+
+    </div>
+  </section>
+
+  <footer>
+    UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO <br> Zúñiga Sanchez Luis Ricardo
+  </footer>
+
+  <script src="js/script.js"> 
+
+    function openTab(evt, tabName) {
+      let contents = document.querySelectorAll(".content");
+      contents.forEach(content => content.classList.remove("active"));
+
+      let buttons = document.querySelectorAll(".tab-btn");
+      buttons.forEach(button => button.classList.remove("active"));
+
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+    function checkQuiz() {
+      let score = 0;
+      if (document.querySelector('input[name="q1"]:checked')?.value === "a") score++;
+      if (document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+      if (document.querySelector('input[name="q3"]:checked')?.value === "a") score++;
+      document.getElementById("quizResult").innerHTML =
+        "Resultado: " + score + " de 3 respuestas correctas.";
+    }
+
+    function checkVF() {
+      let score = 0;
+
+      if (document.getElementById("vf1").value === "verdadero") score++;
+      if (document.getElementById("vf2").value === "falso") score++;
+
+      document.getElementById("vfResult").innerHTML =
+        "Resultado: " + score + " de 2 respuestas correctas.";
+    }
+
+    function checkMatching() {
+      let score = 0;
+
+      if (document.getElementById("m1").value === "promocion") score++;
+      if (document.getElementById("m2").value === "diseño") score++;
+
+      document.getElementById("matchingResult").innerHTML =
+        "Resultado: " + score + " de 2 respuestas correctas.";
+    }
+
+    const draggables = document.querySelectorAll('.draggable');
+    const dropzones = document.querySelectorAll('.dropzone');
+
+    draggables.forEach(draggable => {
+      draggable.addEventListener('dragstart', () => {
+        draggable.classList.add('dragging');
+      });
+
+      draggable.addEventListener('dragend', () => {
+        draggable.classList.remove('dragging');
+      });
+    });
+
+    dropzones.forEach(zone => {
+      zone.addEventListener('dragover', e => {
+        e.preventDefault();
+      });
+
+      zone.addEventListener('drop', e => {
+        e.preventDefault();
+
+        const dragging = document.querySelector('.dragging');
+
+        if (dragging.textContent.trim() === zone.dataset.answer) {
+          zone.innerHTML = "Correcto: " + dragging.textContent;
+          zone.style.background = "#d4edda";
+        } else {
+          zone.innerHTML = "Incorrecto";
+          zone.style.background = "#f8d7da";
+        }
+      });
+    });
+  </script>
+</body>
+    </html>
